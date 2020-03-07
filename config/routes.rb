@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   root 'home#top'
   get 'home/about'
 
+  post '/search_result' => 'search#search'
+
   resources :books, only: [:index, :show, :edit, :create, :update, :destroy] do
     resource :book_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
